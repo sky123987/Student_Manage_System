@@ -1,0 +1,35 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;
+    flex: 1;
+}
+
+/* 关键：侧边栏宽度和布局 */
+.sidebar {
+    width: 250px;
+    display: block; /* 确保不被压缩 */
+}
+
+/* 关键：让菜单项竖向排列 */
+.sidebar a {
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block; /* 这一行是解决“横向排列”的核心 */
+    transition: all 0.3s ease;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    padding: 10px 20px;
+}

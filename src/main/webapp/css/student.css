@@ -1,0 +1,14 @@
+/* 学生蓝色主题 */
+.sidebar {
+    background-color: #0f172a;
+    color: #fff;
+}
+
+.sidebar a {
+    color: #94a3b8;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #0ea5e9;
+    color: #fff;
+}

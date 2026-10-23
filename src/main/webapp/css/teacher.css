@@ -1,0 +1,14 @@
+/* 教师绿色主题 */
+.sidebar {
+    background-color: #1a472a;
+    color: #fff;
+}
+
+.sidebar a {
+    color: #a3c2b3;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #2e8b57;
+    color: #fff;
+}

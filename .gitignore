@@ -1,0 +1,46 @@
+# ---------- 构建产物 ----------
+target/
+build/
+dist/
+*.war
+*.class
+
+# ---------- 运行日志 ----------
+*.log
+logs/
+hs_err_pid*
+
+# ---------- 运行时上传的文件（avatar 目录由程序启动后自动创建） ----------
+src/main/webapp/uploads/avatar/*
+!src/main/webapp/uploads/avatar/.gitkeep
+
+# ---------- IntelliJ IDEA ----------
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# ---------- Eclipse ----------
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# ---------- NetBeans ----------
+/nbproject/private/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+nbproject/
+
+# ---------- VS Code ----------
+.vscode/
+
+# ---------- 操作系统 ----------
+.DS_Store
+Thumbs.db
+
+*.docx
