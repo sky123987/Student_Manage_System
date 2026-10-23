@@ -6,10 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>我的课程 - 成绩管理系统</title>
-  <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-icons.css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/teacher.css">
+  <link href="${pageContext.request.contextPath}/css/bootstrap.min.css?v=20261023c" rel="stylesheet">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-icons.css?v=20261023c">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css?v=20261023c">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/teacher.css?v=20261023c">
 </head>
 <body>
 <%@ include file="/WEB-INF/jspf/navbar.jsp" %>

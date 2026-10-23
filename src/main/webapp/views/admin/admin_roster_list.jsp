@@ -6,9 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>选课名单管理 - 成绩管理系统</title>
-  <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-icons.css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
+  <link href="${pageContext.request.contextPath}/css/bootstrap.min.css?v=20261023c" rel="stylesheet">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-icons.css?v=20261023c">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css?v=20261023c">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin.css?v=20261023c">
 </head>
 <body class="p-4">
 <div class="d-flex justify-content-between align-items-center mb-2">
@@ -96,7 +97,7 @@
   <div class="alert alert-secondary">请选择一门课程查看选课名单。</div>
 </c:if>
 
-<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.min.js?v=20261023c"></script>
 <script>
   // 名单可能很长，用 jQuery 做一个即时筛选：输入学号/姓名/班级立刻过滤表格行
   $(function () {

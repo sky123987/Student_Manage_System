@@ -1,14 +1,14 @@
-/* 管理员深色主题 */
-.sidebar {
-    background-color: #212529;
-    color: #fff;
+/* =========================================================
+   管理员端（深蓝）
+   ========================================================= */
+:root {
+    --sms-accent: #1d4ed8;
 }
 
-.sidebar a {
-    color: #adb5bd;
+.table thead.table-dark th {
+    background: #0f2b5b !important;
 }
 
-.sidebar a:hover, .sidebar a.active {
-    background-color: #0d6efd;
-    color: #fff;
+body.p-4 > .container {
+    border-top: 4px solid #1d4ed8;
 }

@@ -1,14 +1,15 @@
-/* 教师绿色主题 */
-.sidebar {
-    background-color: #1a472a;
-    color: #fff;
+/* =========================================================
+   教师端（绿色）
+   ========================================================= */
+:root {
+    --sms-accent: #059669;
 }
 
-.sidebar a {
-    color: #a3c2b3;
+.table thead.table-dark th {
+    background: #065f46 !important;
 }
 
-.sidebar a:hover, .sidebar a.active {
-    background-color: #2e8b57;
-    color: #fff;
+.nav-pills .nav-link.active {
+    background: #059669;
+    box-shadow: 0 6px 14px rgba(5, 150, 105, .25);
 }

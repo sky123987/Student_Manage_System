@@ -6,10 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>管理员控制台 - 成绩管理系统</title>
-  <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-icons.css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin.css">
+  <link href="${pageContext.request.contextPath}/css/bootstrap.min.css?v=20261023c" rel="stylesheet">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap-icons.css?v=20261023c">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css?v=20261023c">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/admin.css?v=20261023c">
 </head>
 <body>
 <%@ include file="/WEB-INF/jspf/navbar.jsp" %>
@@ -87,7 +87,7 @@
     </div>
 
     <div class="card mt-4">
-      <div class="card-header bg-info text-white">管理员可以做什么</div>
+      <div class="card-header sms-card-head text-white">管理员可以做什么</div>
       <div class="card-body">
         <ul class="mb-0">
           <li>账号管理：新增/删除账号、重置密码、调整角色</li>

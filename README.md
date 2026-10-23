@@ -17,7 +17,7 @@
 - **数据库**：MySQL 8.x，Druid 连接池，`mysql-connector-j` 8.0.33
 - **构建**：Maven（WAR 打包，finalName = `myapp`）
 - **容器**：Tomcat 11（Jakarta EE 10，Servlet 6）
-- **前端**：Bootstrap 5.3、Bootstrap Icons、jQuery（均已本地化到 `webapp/css`、`webapp/js`，离线可用）、原生 JavaScript
+- **前端**：Bootstrap 5.3、Bootstrap Icons、jQuery（均已本地化到 `webapp/css`、`webapp/js`，离线可用）、原生 JavaScript，统一视觉主题（`css/common.css`、`css/auth.css`）
 - **报表**：Apache POI 5.2.3 导出 `.xlsx`
 
 ## 环境要求
@@ -48,8 +48,8 @@ Student_Manage_System/
     └── webapp/
         ├── WEB-INF/web.xml           # Filter 映射、JSP UTF-8 配置
         ├── WEB-INF/jspf/             # navbar.jsp、msg.jsp 公共片段
-        ├── css/                      # Bootstrap 5.3、Bootstrap Icons（含 fonts/）与项目样式
-        ├── js/                       # Bootstrap bundle、jQuery
+        ├── css/                      # Bootstrap 5.3、Bootstrap Icons（含 fonts/）、common.css 与 auth.css
+        ├── js/                       # Bootstrap bundle、jQuery、auth.js（密码显示切换）
         └── views/                    # 页面：login、register、change_password、admin/、teacher/、student/
 ```
 
@@ -217,6 +217,16 @@ http://localhost:8080/myapp/
 **Q：注册/改密码时提示不符合规则？**
 新规则要求至少 6 位且同时包含字母和数字，例如 `abc123`、`A1b2c3`；纯数字（如 `123456`）和纯字母都不允许。
 
+## 界面与视觉风格
+
+前端以「校园教务系统」为基调，深蓝（`#1d4ed8`）为主色、金色（`#fbbf24`）为点缀，所有静态资源本地化，断网也能正常显示。
+
+- **认证页统一**：登录、注册、修改密码共用 `css/auth.css`，采用深蓝渐变 + 网格纹理背景、金色校徽、白色圆角卡片与图标输入框；三个页面布局、间距、按钮样式完全一致。
+- **修改密码与登录注册同步**：`change_password.jsp` 与登录/注册使用同一套 `auth-shell` / `auth-card` / `auth-input` 结构与 `js/auth.js`（密码显示/隐藏）。
+- **全站导航**：`common.css` 将 navbar 改为深蓝渐变，当前菜单金色胶囊高亮；导航使用 `navbar-expand-xl`，中等屏幕自动折叠，避免菜单换行。
+- **内容页**：统一 `wrapper + content` 框架、标题左侧强调色竖条、卡片式表格（深蓝表头、悬停高亮、圆角阴影）。
+- **角色区分**：`admin.css` / `teacher.css` / `student.css` 分别定义角色主题（管理员蓝、教师墨绿、学生青蓝），标题竖条、表头、筛选胶囊随角色变色；管理端新增/编辑页顶部带角色色条。
+- **管理页**：以 `body class="p-4"` 的增删改查页面自动获得居中内容框、卡片化表格；新增/编辑表单页为白色圆角卡片，分组小标题带强调色竖条。
 ## 本次改动记录
 
 | 文件 | 改动 |
@@ -229,4 +239,11 @@ http://localhost:8080/myapp/
 | `src/main/java/com/lut/grade/filter/CharacterEncodingFilter.java` | 不再对静态资源强制 `text/html`，修复浏览器因 MIME 类型不匹配而拒绝加载 CSS/JS 的问题 |
 | `src/main/webapp/css/`、`src/main/webapp/js/` | 本地化 Bootstrap 5.3、Bootstrap Icons、jQuery，移除对 `cdn.jsdelivr.net` 的依赖 |
 | `src/main/webapp/views/` 下 38 个 JSP、`WEB-INF/jspf/navbar.jsp` | CDN 引用统一改为 `${pageContext.request.contextPath}` 本地路径 |
-| `README.md` | 新增项目说明、部署步骤与密码规则文档 |
+| `src/main/webapp/css/auth.css`、`src/main/webapp/js/auth.js` | 新增：登录/注册/修改密码共用的认证页样式、密码显示切换脚本 |
+| `src/main/webapp/css/common.css` | 全站组件统一：渐变导航、内容区框架、表格卡片、表单页白卡、筛选栏、页签、弹窗、彩色统计卡、按钮与复选框细节 |
+| `src/main/webapp/css/admin.css`、`teacher.css`、`student.css` | 角色主题：标题竖条、表头配色（管理员深蓝 / 教师墨绿 / 学生青蓝）、筛选胶囊高亮；管理端表单卡加顶部色条 |
+| `src/main/webapp/views/admin/` 下 21 个 JSP | 引入 `admin.css`，管理页面应用管理员主题 |
+| `src/main/webapp/views/login.jsp`、`register.jsp`、`change_password.jsp` | 统一为「品牌区 + 白卡 + 图标输入框」，保留原字段、id 与弹窗校验逻辑 |
+| `WEB-INF/jspf/navbar.jsp` | 导航改为 `navbar-expand-xl`，避免中等屏幕菜单换行 |
+| `src/main/webapp/views/admin/index.jsp` | 提示卡头部改用主题渐变样式 |
+| `README.md` | 新增项目说明、部署步骤、密码规则与界面风格文档 |

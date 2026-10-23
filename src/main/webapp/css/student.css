@@ -1,14 +1,15 @@
-/* 学生蓝色主题 */
-.sidebar {
-    background-color: #0f172a;
-    color: #fff;
+/* =========================================================
+   学生端（青色）
+   ========================================================= */
+:root {
+    --sms-accent: #0891b2;
 }
 
-.sidebar a {
-    color: #94a3b8;
+.table thead.table-dark th {
+    background: #155e75 !important;
 }
 
-.sidebar a:hover, .sidebar a.active {
-    background-color: #0ea5e9;
-    color: #fff;
+.nav-pills .nav-link.active {
+    background: #0891b2;
+    box-shadow: 0 6px 14px rgba(8, 145, 178, .25);
 }

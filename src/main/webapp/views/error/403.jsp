@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>没有权限</title>
-    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css?v=20261023c" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/common.css?v=20261023c" rel="stylesheet">
 </head>
 <body>
 <div class="container" style="max-width:560px;margin-top:12vh;">
