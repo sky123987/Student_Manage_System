@@ -1,0 +1,255 @@
+:root {
+    --auth-primary: #1d4ed8;
+    --auth-primary-dark: #1e3a8a;
+    --auth-accent: #fbbf24;
+    --auth-ink: #0f172a;
+    --auth-muted: #64748b;
+    --auth-border: #e2e8f0;
+    --auth-radius: 20px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* 深蓝渐变背景 + 网格纹理 */
+.auth-body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 16px;
+    position: relative;
+    overflow-x: hidden;
+    color: var(--auth-ink);
+    font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, sans-serif;
+    background:
+        radial-gradient(circle at 12% 16%, rgba(251, 191, 36, .22), transparent 34%),
+        radial-gradient(circle at 88% 8%, rgba(56, 189, 248, .24), transparent 38%),
+        linear-gradient(135deg, #081a36 0%, #12306b 48%, #1d4ed8 100%);
+}
+
+.auth-body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, .05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px);
+    background-size: 52px 52px;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .85), transparent 88%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .85), transparent 88%);
+}
+
+.auth-shell {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 440px;
+}
+
+.auth-shell-wide {
+    max-width: 620px;
+}
+
+/* 品牌区 */
+.auth-brand {
+    text-align: center;
+    color: #fff;
+}
+
+.auth-logo {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    font-size: 32px;
+    color: #1e3a8a;
+    background: linear-gradient(145deg, #fde68a, #f59e0b);
+    box-shadow: 0 14px 34px rgba(245, 158, 11, .38);
+}
+
+.auth-brand h1 {
+    margin: 0 0 6px;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.auth-brand p {
+    margin: 0;
+    font-size: 11.5px;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .58);
+}
+
+/* 卡片 */
+.auth-card {
+    margin-top: 30px;
+    padding: 34px 34px 30px;
+    background: #fff;
+    border-radius: var(--auth-radius);
+    box-shadow: 0 30px 70px rgba(2, 6, 23, .42);
+}
+
+.auth-card-head {
+    margin-bottom: 22px;
+}
+
+.auth-card-head h2 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.auth-card-head p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--auth-muted);
+}
+
+/* 提示条 */
+.auth-alert {
+    margin-bottom: 18px;
+    padding: 11px 14px;
+    border: 0;
+    border-radius: 12px;
+    font-size: 13.5px;
+}
+
+/* 表单 */
+.auth-card .form-label {
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.auth-card .form-text {
+    margin-top: 5px;
+    font-size: 12.5px;
+    color: #94a3b8;
+}
+
+.auth-input .input-group-text {
+    padding: 0 13px;
+    color: #94a3b8;
+    background: #f8fafc;
+    border-color: var(--auth-border);
+}
+
+.auth-input .input-group-text:first-child {
+    border-right: 0;
+    border-radius: 12px 0 0 12px;
+}
+
+.auth-input .form-control,
+.auth-input .form-select {
+    min-height: 46px;
+    font-size: 14.5px;
+    background: #f8fafc;
+    border-color: var(--auth-border);
+    border-radius: 0;
+}
+
+.auth-input .form-control:last-child,
+.auth-input .form-select:last-child {
+    border-radius: 0 12px 12px 0;
+}
+
+.auth-input .form-control:focus,
+.auth-input .form-select:focus {
+    background: #fff;
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 .2rem rgba(37, 99, 235, .12);
+}
+
+.auth-input .btn-eye {
+    padding: 0 13px;
+    color: #94a3b8;
+    background: #f8fafc;
+    border: 1px solid var(--auth-border);
+    border-left: 0;
+    border-radius: 0 12px 12px 0;
+}
+
+.auth-input .btn-eye:hover {
+    color: var(--auth-primary);
+    background: #eff6ff;
+}
+
+/* 提交按钮 */
+.btn-auth-primary {
+    min-height: 48px;
+    margin-top: 6px;
+    border: 0;
+    border-radius: 12px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    color: #fff;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 12px 26px rgba(29, 78, 216, .3);
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.btn-auth-primary:hover,
+.btn-auth-primary:focus {
+    color: #fff;
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+    box-shadow: 0 16px 30px rgba(29, 78, 216, .36);
+}
+
+/* 底部链接 */
+.auth-links {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--auth-border);
+    text-align: center;
+    font-size: 14px;
+    color: var(--auth-muted);
+}
+
+.auth-links a {
+    margin-left: 4px;
+    font-weight: 600;
+    color: var(--auth-primary);
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.auth-footer {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, .55);
+}
+
+.auth-card .form-select {
+    min-height: 46px;
+}
+
+@media (max-width: 575.98px) {
+    .auth-body {
+        padding: 32px 14px;
+    }
+
+    .auth-brand h1 {
+        font-size: 22px;
+    }
+
+    .auth-card {
+        margin-top: 24px;
+        padding: 26px 22px 24px;
+    }
+}
