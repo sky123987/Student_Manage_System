@@ -17,7 +17,7 @@
 - **数据库**：MySQL 8.x，Druid 连接池，`mysql-connector-j` 8.0.33
 - **构建**：Maven（WAR 打包，finalName = `myapp`）
 - **容器**：Tomcat 11（Jakarta EE 10，Servlet 6）
-- **前端**：Bootstrap 5.3（CDN）、Bootstrap Icons、原生 JavaScript
+- **前端**：Bootstrap 5.3、Bootstrap Icons、jQuery（均已本地化到 `webapp/css`、`webapp/js`，离线可用）、原生 JavaScript
 - **报表**：Apache POI 5.2.3 导出 `.xlsx`
 
 ## 环境要求
@@ -48,6 +48,8 @@ Student_Manage_System/
     └── webapp/
         ├── WEB-INF/web.xml           # Filter 映射、JSP UTF-8 配置
         ├── WEB-INF/jspf/             # navbar.jsp、msg.jsp 公共片段
+        ├── css/                      # Bootstrap 5.3、Bootstrap Icons（含 fonts/）与项目样式
+        ├── js/                       # Bootstrap bundle、jQuery
         └── views/                    # 页面：login、register、change_password、admin/、teacher/、student/
 ```
 
@@ -224,4 +226,7 @@ http://localhost:8080/myapp/
 | `src/main/webapp/views/register.jsp` | 移除 `minlength`，新增 `validateRegisterForm()` 弹窗校验与规则提示文案 |
 | `src/main/webapp/views/change_password.jsp` | 移除 `minlength`，新增 `validateNewPassword()` 弹窗校验与规则提示文案 |
 | `pom.xml` | 固定 `maven-war-plugin` 3.4.0，修复旧版 2.2 在 JDK 17+ 下 `mvn package` 报 `Cannot access defaults field of Properties` |
+| `src/main/java/com/lut/grade/filter/CharacterEncodingFilter.java` | 不再对静态资源强制 `text/html`，修复浏览器因 MIME 类型不匹配而拒绝加载 CSS/JS 的问题 |
+| `src/main/webapp/css/`、`src/main/webapp/js/` | 本地化 Bootstrap 5.3、Bootstrap Icons、jQuery，移除对 `cdn.jsdelivr.net` 的依赖 |
+| `src/main/webapp/views/` 下 38 个 JSP、`WEB-INF/jspf/navbar.jsp` | CDN 引用统一改为 `${pageContext.request.contextPath}` 本地路径 |
 | `README.md` | 新增项目说明、部署步骤与密码规则文档 |
